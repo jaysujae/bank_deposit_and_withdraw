@@ -24,6 +24,7 @@ require (
 	github.com/rogpeppe/go-internal v1.9.0 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/stretchr/testify v1.8.1 // indirect
+	github.com/tigerbeetledb/tigerbeetle-go v0.0.0-20230317183045-3a2bc9da4c9e // indirect
 	go.temporal.io/api v1.16.0 // indirect
 	go.uber.org/atomic v1.10.0 // indirect
 	golang.org/x/net v0.5.0 // indirect
