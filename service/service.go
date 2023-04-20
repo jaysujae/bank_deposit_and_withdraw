@@ -29,7 +29,7 @@ type inmemoryDB struct {
 }
 
 func (d *inmemoryDB) GetWorkflowIDByAmount(amount int) string {
-	if len(d.m[amount][0]) > 0{
+	if len(d.m[amount]) > 0{
 		return d.m[amount][0]
 	}
 	return ""

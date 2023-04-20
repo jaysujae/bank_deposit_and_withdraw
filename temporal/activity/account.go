@@ -21,8 +21,8 @@ func (a *Activities) GetAccount(ctx context.Context, accountNumber int) (tempora
     account := accounts[0]
 	return temporal.Account{
 		ID: accountNumber,
-		Available: int(account.CreditsPosted - account.DebitsPending - account.DebitsPosted),
-		Reserved: int(account.CreditsPending + account.DebitsPending),
+		Available: int(account.CreditsPosted - account.DebitsPosted - account.DebitsPending + account.CreditsPending),
+		Reserved: int(account.DebitsPending - account.CreditsPending),
 	}, nil
 }
 

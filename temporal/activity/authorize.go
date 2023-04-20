@@ -33,11 +33,12 @@ func (a *Activities) CreateAuthorizeTransfer(ctx context.Context, p temporal.Aut
 }
 
 func (a *Activities) CancelAuthorize(ctx context.Context, pendingID string) (error) {
+	// when authorize is cancelled, bank gets reserved credit and customer loses credit
 	_, err := a.Client.CreateTransfers([]tb_types.Transfer{
 		{
 			ID:              uint128(uuid.NewString()[:5]),
 			PendingID:  uint128(pendingID),
-			Flags: tb_types.TransferFlags{VoidPendingTransfer: true}.ToUint16(),
+			Flags: tb_types.TransferFlags{PostPendingTransfer: true}.ToUint16(),
 		},
 	})
 	if err != nil {

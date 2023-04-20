@@ -14,7 +14,7 @@ var a *activity.Activities
 
 const (
 	AcceptSubmissionSignalName = "accept-submission"
-	AcceptGracePeriod          = time.Second * 10
+	AcceptGracePeriod          = time.Second * 100
 )
 
 
